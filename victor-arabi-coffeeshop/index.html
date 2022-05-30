@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="./scss/landing.css" rel="stylesheet">
+    <title>Coffee Shop - Home</title>
+</head>
+<body>
+    <!--Header-->
+<header>
+        <!--Navigation-->
+    <nav class="nav" aria-label="Main Navigation">
+        <aside class="nav__logo-container">
+            <a class="nav__link" href="./index.html"><img class="nav__img" src="./assets/logos/coffee-beans-logo-and-footer.svg" alt="coffee bean logo"></a>
+            <a class="nav__link"href="./index.html"><h2 class="nav__title">nitro</h2></a>
+        </aside>
+    <ul class="nav__list">
+        <a class="nav__link" href="./index.html"><li class="nav__item">ABOUT</li></a>
+        <a class="nav__link" href="./pages/menu.html"><li class="nav__item">MENU</li></a>
+        <a class="nav__link nav__link--blue" href="./pages/menu.html"><li class="nav__item">SHOP NOW</li></a>
+    </ul>
+    </nav>
+        <!--Main Header-->
+    <div class="header">
+        <article class="header__article">
+            <h1 class="header__title">Nitro Coffee</h1>
+            <p class="header__text">Coffee is a brewed drink prepared from<br> roasted coffee beans, the seeds of berries<br> from certain Coffea species.</p>
+            <a class="btn__link" href="./pages/menu.html">
+                <div class="btn">
+                    <div class="btn__border">
+                        <p class="btn__txt">SHOP NOW</p>
+                    </div>
+                </div>
+            </a>
+        </article>
+        <article class="header__article header__article--align-right">
+        <img class="header__img" src="./assets/images/coffeebeans-hero.png" alt="coffee bag" />
+        </article>
+    </div>
+</header>
+    <!--Container-->
+<main class="products">
+    <h2 class="products__title">Our Products</h2>
+    <!--Our products section-->
+    <section class="products__section">
+        <!--Coffee Beans Card-->
+        <article class="card">
+            <img class="card__img" src="./assets/images/coffeebeans.png" alt="coffee beans" />
+            <div class="card__container">
+                <aside class="card__product">
+                    <h3 class="card__title">Coffee Beans</h3>
+                    <p class="card__txt">Pack of 3</p>
+                </aside>
+                <aside class="card__price-box">
+                    <p class="card__title card__title--price">$19</p>
+                </aside>
+            </div>
+        </article>
+        <!--Cold Brew Card-->
+        <article class="card">
+            <img class="card__img" src="./assets/images/coldbrew.png" alt="cold brew" />
+            <div class="card__container">
+                <aside class="card__product">
+                    <h3 class="card__title">Cold Brew</h3>
+                    <p class="card__txt">1 can</p>
+                </aside>
+                <aside class="card__price-box">
+                    <p class="card__title card__title--price">$5</p>
+                </aside>
+            </div>
+        </article>
+        <!--In-house Brew Card-->
+        <article class="card">
+            <img class="card__img" src="./assets/images/inhousebrew.png" alt="in-house brew" />
+            <div class="card__container">
+                <aside class="card__product">
+                    <h3 class="card__title">In-house brew</h3>
+                    <p class="card__txt">1 cup</p>
+                </aside>
+                <aside class="card__price-box">
+                    <p class="card__title card__title--price">$3</p>
+                </aside>
+            </div>
+        </article>
+    </section>
+    <!--btn container for products session-->
+    <section class="products__btn">
+        <a class="btn__link" href="./pages/menu.html">
+            <div class="btn">
+                <div class="btn__border">
+                    <p class="btn__txt">VIEW ALL</p>
+                </div>
+            </div>
+        </a>  
+    </section>
+</main>
+<!--Discount Section-->
+<section class="discount">
+    <div class="discount__container">
+        <aside class="discount__learn-more">
+            <h2 class="discount__title">We're different</h2>
+            <p class="discount__paragraph">We grow and roast our own beans. Every bean, every<br>cup, every step of the way, we strive for excelence.</p>
+            <div class="discount__logos">
+                <img class="discount__img" src="./assets/images/planting.svg" alt="planting" />
+                <img class="discount__img" src="./assets/images/coffee-beans.svg" alt="coffe beans" />
+                <img class="discount__img" src="./assets/images/coffee-cup.svg" alt="coffe beans" />
+            </div>
+            <a class="btn__link" href="./index.html">
+            <div class="btn">
+                <div class="btn__border">
+                    <p class="btn__txt">LEARN MORE</p>
+                </div>
+            </div>
+        </a>
+        </aside>
+        <aside class="discount__promo">
+            <div class="discount__promo-border">
+                <img class="discount__promo__img" src="./assets/images/tiltedcan.png" alt="tilted can" />
+            </div>
+        </aside>
+    </div>
+    <article class="discount__banner">
+        <p class="discount__text">Get 20% off your first order with code: <strong class="discount__text--bold">FirstNitro</strong></p>
+    </article>
+</section>
+<!--Footer-->
+<footer class="footer">
+    <article class="footer__article">
+        <!--Address division-->
+        <section class="footer__section">
+            <h3 class="footer__title">Address</h3>
+            <p class="footer__text">503 Broadway Penthouse</p>
+            <p class="footer__text">New York</p>
+        </section>
+        <!--Hour division-->
+        <section class="footer__section">
+            <h3 class="footer__title">Hours</h3>
+            <p class="footer__text"><strong class="footer__text--bold">Monday - Friday:</strong> 9am - 7pm</p>
+            <p class="footer__text"><strong class="footer__text--bold">Saturday - Sunday:</strong> 10am - 5pm</p>
+        </section>
+        <!--Social division-->
+        <section class="footer__section">
+            <h3 class="footer__title">Social</h3>
+            <a class="footer__link" href="https://www.facebook.com" target="_blank"><img class="footer__img" src="./assets/images/Facebook-Icon.svg" alt="facebook"></a><a href="https://www.yelp.com" target="_blank"><img class="footer__img" src="./assets/images/Yelp-Icon.svg" alt="yelp"></a><a href="https://www.instagram.com" target="_blank"><img class="footer__img" src="./assets/images/Instagram-Icon.svg" alt="instagram"></a>
+        </section>
+    </article>
+</footer>
+</body>
+</html>

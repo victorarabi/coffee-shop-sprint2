@@ -1,0 +1,386 @@
+@use './partials/global' as *;
+
+//Color variables
+
+$nitro-blue: #5BACC3;
+$nitro-pink: #FFF0ED;
+$graphite: #393939;
+$gray: #909090;
+$lightgray: #F7F7F7;
+$white: #FFF;
+
+//fonts
+
+.h1 { //heading 1&2
+    font-size: 3.75rem;
+    font-weight: 300;
+}
+
+.h2 { //heading 3, nav & footer
+    font-size: 2.063rem;
+    font-weight: 300;
+}
+
+.text1 { //Navlink & Button
+    font-size: 1.313rem;
+    font-weight: 400;
+}
+
+.text2 { // regular text
+    font-size: 1.125rem;
+    font-weight: 400;
+}
+
+.no-list-style {
+    text-decoration: none;
+    list-style-type: none;
+}
+
+// Animations
+
+//rotation animation
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes flash {
+    0% {
+        background-color: $graphite;
+    }
+    50% {
+        background-color: $nitro-blue;
+    }
+    100% {
+        background-color: $graphite;
+    }
+}
+
+.nav { // nav block
+    background-color: $nitro-pink;
+    min-width: 100%;
+    min-height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    &__link { // nav link element
+        text-decoration: none;
+        color:  $graphite;
+        &--blue { // special element for when the nav link is blue
+            color: $nitro-blue;
+        }
+    }
+    &__img { // main nav img element
+        min-width: 50px;
+        max-width: 120px;
+        height: 2.5rem;
+        margin: 1.25rem 0 0 1.25rem;
+        padding: 10;
+        display: inline-block;
+    }
+    &__title { // main nav title element
+        width: 10%;
+        height: fit-content;
+        margin: 0.625rem 1.25rem 0.625rem 0;
+        padding: 0.625rem 1.25rem 0.625rem 0;
+        @extend .h2;
+        color: $graphite;
+        display: inline-block
+    }
+    &__list { // Main nav list element
+        @extend .text1;
+        @extend .no-list-style;
+        display: inline-block;
+    }
+    &__item { /* main header block */
+        height: fit-content;
+        width: fit-content;
+        margin: 0.625rem;
+        padding: 0.625rem;
+        display: inline-block;
+    }
+}
+
+.header { // Main header background color and text color
+    width: 100%;
+    background-color: $nitro-pink;
+    color: $graphite;
+    &__article { // article to split text and image on the screen
+        width: 40%;
+        height: 100%;
+        margin: 2.5rem 0 1.25rem 5rem;
+        display: inline-block;
+        vertical-align: middle;
+        &--align-right { // fixes image position to the right of the main header
+            text-align: right;    
+        }
+    }
+    &__title { // main header title elements
+        @extend .h1;
+    }
+    &__text { //main header text elements
+        @extend .text2;
+        margin: 1.25rem 0 2.5rem;
+    }
+}
+
+.btn { // button block
+    width: 11.25rem;
+    height: 4.5rem;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    background-color: $nitro-blue;
+    position: relative;
+    &__link { // button link elements
+        text-decoration: none;
+    }
+    &__border { // button border element
+        width: 11.25rem;
+        height: 4.5rem;
+        border: 0.188rem solid $graphite;
+        position: absolute;
+        top: -0.313rem;
+        left: -0.313rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &:active { //animation on button press
+            position: absolute;
+            top: 0rem;
+            left: 0rem;
+        }
+    }
+    &__txt   { // btn txt
+        @extend .text1;
+        color: $white;
+    }
+}
+
+.products { // products block 
+    width: 100%;
+    @extend .text2;
+    color: $graphite;
+    text-align: center;
+    background-color: $lightgray;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    &__title { // products title element
+        padding-top: 3.75rem;
+        @extend .h1;
+    }
+    &__section { // products section element
+        width: 100%;
+        height: fit-content;
+        padding: 2.0rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    &__btn  { // button container
+        width: 100%;
+        margin-bottom: 2.5rem;
+        display: flex;
+        justify-content: center;
+    }
+    &__link { // products link element
+        text-decoration: none;
+    }
+}
+
+.card { // card block
+    min-width: 20.625rem;
+    max-width: 21.875rem;
+    min-height: 27.5rem;
+    max-height: 28.75rem;
+    margin: 2.5rem;
+    border-radius: 0.625rem;
+    box-shadow: 0 5px 9px -1px rgba(0, 0, 0, 0.25); 
+    display: inline-flex;
+    flex-direction: column;
+    background-color: $white;
+    justify-content: flex-end;
+    &__img { // card img element
+        margin: 1.875rem 0 1.875rem;
+        min-height: 240px;
+        max-height: 550px;
+        align-self: center;
+    }
+    &__container { // card container element
+        height: 8.125rem;
+        border-bottom-left-radius: 0.625rem;
+        border-bottom-right-radius: 0.625rem;
+        background-color: $nitro-pink;
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &__product  { // card product container element
+        height: 100%;
+        margin-top: 3.75rem;
+        margin-left: 1.25rem;
+        text-align: left;
+    }
+    &__title { // card title element 
+        @extend .h2;
+        &--price { // card price title modification for pricing
+            font-weight: 700;
+            color: $nitro-blue;
+        }
+    }
+    &__txt { // card text element
+        font-size: 1rem;
+        font-weight: 300;
+    }
+    &__price-box { //card price box
+        margin-right: 1.25rem;
+    } 
+}
+
+.discount { // discount block
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-flow: column nowrap;
+    &__container { // discount container element
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+    &__learn-more { // discount learm-more container element
+        width: 28.125rem;
+        height: 22.5rem;
+        margin-top: 5rem;
+        display: flex;
+        flex-flow: column wrap;
+    }
+    &__title { // discount title element
+        margin-bottom: 1.875rem;
+        @extend .h1;
+    }
+    &__paragraph { // discount paragraph element
+        @extend .text2;
+    }
+    &__logos { // discount logo container element
+        width: 100%;
+        margin: 1.25rem 0;
+        display: flex;
+        justify-content: space-between;
+    }
+    &__img { // discount logo element
+        max-width: 50px;
+    }
+    &__promo { // discount promo container element
+        min-width: 25rem;
+        max-width: 31.25rem;
+        height: 24rem;
+        margin: 3.75rem 0;
+        background-position: center;
+        background-size: cover;
+        background-image: url("../assets/images/coldbrewbackground.png");
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        &__img   { // discount promo img element
+            min-height: 240px;
+            max-height: 550px;
+            &:hover { //rotate animation
+                animation: rotation 2s linear infinite;
+            }
+        }
+    }
+    &__promo-border { // discount promo border element
+        min-width: 25rem;
+        max-width: 31.25rem;
+        height: 24rem;
+        border: 0.313rem solid $nitro-blue;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: -1.25rem;
+        left: -1.25rem;
+    }
+    &__banner { // products discount banner section element
+        min-width: fit-content;
+        max-width: 100%;
+        margin: 6.25rem 0;
+        padding: 1.875rem;
+        animation: flash 2.5s linear infinite;
+        justify-self: center;
+    }
+    &__text { // products discount banner section text element
+        font-size: 2.813rem;
+        font-weight: 400;
+        text-align: center;
+        color: $white;
+        &--bold { // products discount banner section bold text modification
+            font-weight: bold;
+        }
+    }
+}
+
+.footer { //footer block
+    height: fit-content;
+    padding: 1.25rem;
+    @extend .text2;
+    color: $graphite;
+    background-color: $nitro-pink;
+    position: relative;
+    &::before { // footer background image to the left
+    content: "";
+    background-image: url('../assets/logos/coffee-beans-logo-and-footer.svg');
+    background-size: 7.5rem;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 1.563rem;
+    right: 0rem;
+    bottom: 0rem;
+    left: -2.813rem;
+    opacity: 0.25;
+    }
+    &::after { // footer background image to the right
+        content: "";
+        background-image: url('../assets/logos/coffee-beans-logo-and-footer.svg');
+        background-size: 7.5rem;
+        background-repeat: no-repeat;
+        position: absolute;
+        top: 30%;
+        right: 0rem;
+        bottom: 0rem;
+        left: 96%;
+        opacity: 0.25;
+    }
+    &__article { //footer article element
+        width: fit-content;
+        margin: 0 auto;
+    }
+    &__section { // footer section element
+        width: fit-content;
+        height: 100%;
+        margin: 1.25rem 5rem;
+        display: inline-block;
+        vertical-align: text-top;
+    }
+    &__title { // footer title element 
+        margin: 1.25rem 0;
+        @extend .h2;
+    }
+    &__text { // footer text element
+        &--bold { // footer text bold element
+            font-weight: bold;
+        }
+    }
+    &__img { // footer img element
+        min-width: 50px;
+        max-width: 120px;
+    }
+}
